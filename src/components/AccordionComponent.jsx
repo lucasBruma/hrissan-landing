@@ -8,10 +8,6 @@ import {
     AccordionIcon,
   } from '@chakra-ui/react'
 
-import person1 from '../assets/avatar-ali.png'
-import person2 from '../assets/avatar-anisha.png'
-import person3 from '../assets/avatar-richard.png'
-import person4 from '../assets/avatar-shanai.png'
 
 const questionsArray = [
     {
