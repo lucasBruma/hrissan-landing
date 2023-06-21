@@ -6,7 +6,7 @@ import AccordionComponent from './AccordionComponent';
 function Faqs() {
 
     return (
-        <VStack bgColor={'brand.secondary'} gap={6} justifyItems={'center'} pt={20} height='550px'>
+        <VStack bgColor={'brand.secondary'} gap={6} justifyItems={'center'} pt='12rem' height='550px' id='faqs'>
             <Heading>Preguntas frecuentes</Heading>
             <AccordionComponent/>
         </VStack>

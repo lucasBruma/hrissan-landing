@@ -15,6 +15,7 @@ const comments = [
     {
         image: person1,
         name: 'Ali Bravo',
+        position:'posicion',
         text: `“Hemos podido cancelar muchas otras suscripciones desde que usamos
         Administrar. No hay más confusión entre canales y todo el mundo es mucho
         más concentrado.” `
@@ -22,16 +23,19 @@ const comments = [
     {
         image: person2,
         name: 'Ana Li',
+        position:'posicion',
         text: `“Ha sobrealimentado el flujo de trabajo de nuestro equipo. La capacidad de mantener la visibilidad de hitos más importantes en todo momento mantiene a todos motivados.”`
     },
     {
         image: person3,
         name: 'Ricardo Watts',
+        position:'posicion',
         text: `“Manage nos permite proporcionar estructura y proceso. Nos mantiene organizados y enfocado ¡No puedo dejar de recomendarlos a todas las personas con las que hablo!” `
     },
     {
         image: person4,
         name: 'Lana Gough',
+        position:'posicion',
         text: ` “Su software nos permite rastrear, administrar y colaborar en nuestros proyectos. De donde sea. Mantiene a todo el equipo sincronizado sin ser intrusivo.”`
     }
 ]
@@ -80,6 +84,7 @@ function Carrousel() {
                 <VStack key={index} cursor='grab' p='2rem' paddingBottom='4rem' textAlign='center' userSelect='none'>
                       <Image src={comment.image}></Image>
                       <Box fontWeight='800'>{comment.name}</Box>
+                      <Box fontWeight='800'>{comment.position}</Box>
                       <Box color='blue.light'>{comment.text}</Box>
                   </VStack>)
               })}

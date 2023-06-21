@@ -6,6 +6,7 @@ import Team from './components/Team'
 import Footer from './components/Footer'
 import Faqs from './components/Faqs'
 import WppBurble from './components/WppBurble'
+import Proposal from './components/Proposal'
 
 function App() {
  // const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
     <>
       <Navbar/>
       <Intro/>
+      <Proposal/>
       <Team/>
       <Faqs/>
       <Footer/>

@@ -6,89 +6,107 @@ import {
     HStack, 
     Button,
     VStack, 
-    Stack, 
+    Stack
+     
 } from '@chakra-ui/react';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 import logo from '../assets/logo.png';
-import iconFacebook from '../assets/icon-facebook.svg'
-import iconYoutube from '../assets/icon-youtube.svg'
-import iconTwitter from '../assets/icon-twitter.svg'
-import iconPinterest from '../assets/icon-pinterest.svg'
-import iconInstagram from '../assets/icon-instagram.svg';
+import iconLinkedin from '../assets/icon-linkedin.svg' 
+import iconInstagram from '../assets/instagram-logo.svg';
 // import { Link, animateScroll as scroll } from "react-scroll";
 
-const sectionsLeft = [{
-    href: 'nosotros',
-    name: 'Nosotros'
-  },
-  {
-    href: 'servicios',
-    name: 'Servicios'
-  },
-  {
-    href: 'comunidad',
-    name: 'Comunidad'
-  },
-  {
-    href: 'contacto',
-    name: 'Contacto'
-  }]
 
 const sectionsRight = [{
-    href: 'informacion',
-    name: 'Informacion'
-},
-{
-    href: 'mail',
-    name: 'Mail'
-},
-{
-    href: 'whatsapp',
-    name: 'Whatsapp'
-}]
+    name:'Feedback',
+    to: 'feedback'
+  },
+  {
+    name:'Faqs',
+    to: 'faqs'
+  }]
 
-const icons = [iconFacebook,iconYoutube,iconTwitter,iconPinterest,iconInstagram]
+const sectionsLeft = [{
+    name: 'Nosotros',
+    to: 'intro'
+},
+{
+  name:'Propuestas',
+  to: 'proposals'
+}]
 
 function Footer({mobile}) {
     return ( 
         <Stack 
             id='about'
-            bg='brand.primary' 
+            bg='black' 
             direction={['column-reverse', null, 'row']} 
             justifyContent='space-around' 
             py='3rem' 
             px={['2rem', null,'7rem']} 
             spacing={['4rem', null, null]}
+            mt='5rem'
             >
             <Stack direction={['column-reverse',null,'column']} justifyContent='space-between' alignItems='center' spacing={['4rem', null]}>
                 {mobile && <Box color='blue.light'>Copyright 2023. All Rights Reserved</Box>}
                 <Image src={logo} pt='5px' maxWidth={['200px','150px']} objectFit={'cover'}/>
                 <HStack spacing='1rem' justifyContent={['space-around',null]} width='100%'>
-                    {icons.map((icon, index)=>{
-                        return <Image 
-                                    key={index} 
-                                    src={icon} 
-                                    cursor='pointer' 
-                                    height={['32px', '20px']}  
-                                    _hover={{
-                                        filter:'invert(58%) sepia(54%) saturate(470%) hue-rotate(323deg) brightness(103%) contrast(95%)'
-                                    }}
-                                    transition='.4s all ease'
-                                    >
-                            </Image>
-                    })}
+                <a href='https://www.instagram.com' target='_blank' rel="noreferrer">
+                <Image 
+                        src={iconInstagram} 
+                        cursor='pointer' 
+                        height={'50px'}
+                        width={'50px'}   
+                        _hover={{
+                            filter:'invert(58%) sepia(54%) saturate(470%) hue-rotate(323deg) brightness(103%) contrast(95%)'
+                        }}
+                        transition='.4s all ease'
+                        >
+                    </Image>
+                </a>
+                <a href='https://www.linkedin.com/company/hrissan/' target='_blank' rel="noreferrer">
+                <Image 
+                        src={iconLinkedin} 
+                        cursor='pointer' 
+                        height={'50px'}
+                        width={'50px'}   
+                        _hover={{
+                            filter:'invert(58%) sepia(54%) saturate(470%) hue-rotate(323deg) brightness(103%) contrast(95%)'
+                        }}
+                        transition='.4s all ease'
+                        >
+                    </Image>
+                </a>
                 </HStack>
             </Stack>
             <HStack spacing={['5rem',null,'10rem']} >
-                    <VStack spacing='.3rem' textAlign='left' alignItems='flex-start'>
-                        {sectionsLeft.map((section, index)=>{
-                        return <Button variant='footer' key={index}>{section.name}</Button>
-                        })}
+                    <VStack spacing='.3rem' height='173px' alignItems='flex-start'>
+                        {sectionsLeft.map((button, index) => ( 
+                            <Link
+                            to={button.to}
+                            spy={true} 
+                            smooth={true} 
+                            offset={50} 
+                            duration={500}
+                            key={index}
+                            >
+                        <Button variant='outline' key={index}>{button.name}</Button>
+                        </Link>
+                        ))}
                     </VStack>
                     <VStack spacing='.3rem' height='173px' alignItems='flex-start'>
-                        {sectionsRight.map((section, index)=>{
-                            return <Button variant='footer' key={index}>{section.name}</Button>
-                        })}
+                        {sectionsRight.map((button, index) => ( 
+                            <Link
+                                to={button.to}
+                                spy={true} 
+                                smooth={true} 
+                                offset={50} 
+                                duration={500}
+                                key={index}
+                            >
+                            <Button variant='outline' key={index}>{button.name}</Button>
+                        </Link>
+                        ))}
                     </VStack>
             </HStack>
             <VStack justifyContent='space-between' alignItems={['center',null,'flex-end']}>

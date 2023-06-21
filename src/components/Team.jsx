@@ -6,7 +6,7 @@ function Team() {
  // const [count, setCount] = useState(0)
 
   return (
-    <Box px='2rem' py='5rem' w='full' bgColor='brand.secondary'>
+    <Box px='2rem' pb='5rem' pt='8rem' w='full' bgColor='brand.secondary' id='feedback'>
         <Carrousel />
     </Box>
   )
